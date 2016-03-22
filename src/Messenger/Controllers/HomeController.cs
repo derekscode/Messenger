@@ -2,18 +2,28 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Messenger.Services;
 using Microsoft.AspNet.Mvc;
 
 // For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace Messenger.Controllers
 {
+    [Route("/[controller]"), Route("/")]
     public class HomeController : Controller
     {
-        // GET: /<controller>/
+        IGreetingService _greeter;
+
+        public HomeController(IGreetingService greeter)
+        {
+            _greeter = greeter;
+        }
+
+        [Route("[action]"), Route("")]
         public IActionResult Default()
         {
-            return Content("Hello from a controller");
+            var greeting = _greeter.GetTodaysGreeting();
+            return View(greeting);
         }
     }
 }
