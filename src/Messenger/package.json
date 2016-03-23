@@ -1,0 +1,13 @@
+{
+	"version": "1.0.0",
+	"name": "Messenger",
+	"private": true,
+	"devDependencies": {
+	},
+	"dependencies": {
+		"grunt": "^0.4.5",
+		"grunt-babel": "^4.0.0",
+		"grunt-contrib-concat": "^1.0.0",
+		"grunt-contrib-uglify": "^1.0.1"
+	}
+}
