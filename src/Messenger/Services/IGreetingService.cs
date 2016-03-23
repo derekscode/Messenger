@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.Framework.ConfigurationModel;
+using Microsoft.Extensions.Configuration;
 
 namespace Messenger.Services
 {
@@ -32,7 +32,7 @@ namespace Messenger.Services
             return new GreetingMessage
             {
                 Id = _id++,
-                Text = _config.Get("message")
+                Text = _config.Get<string>("message")
             };
         }
     }

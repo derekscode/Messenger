@@ -10,12 +10,17 @@
     "Microsoft.AspNet.Server.IIS": "1.0.0-beta7",
     "Microsoft.AspNet.Mvc": "6.0.0-rc1-final",
     "Microsoft.AspNet.Server.Kestrel": "1.0.0-rc1-final",
-    "Microsoft.Framework.ConfigurationModel.Json": "1.0.0-beta4"
-
+    "Microsoft.Extensions.Configuration.Json": "1.0.0-rc1-final",
+    "Microsoft.ApplicationInsights.AspNet": "1.0.0-rc1",
+    "Microsoft.Extensions.Configuration.FileProviderExtensions": "1.0.0-rc1-final"
   },
 
   "commands": {
     "web": "Microsoft.AspNet.Server.Kestrel"
+  },
+
+  "scripts": {
+    "postrestore": "bower install"
   },
 
   "frameworks": {
